@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+<head>
+    <title>Relatorio de Clientes</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+</head>
+<body>
+    <center>
+        <img src="{% static 'images/logo/logo.png' %}">
+        <br/>
+        <h2>Relatorio de Clientes</h2>
+    </center>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Endereco</th>
+                    <th scope="col">Telefone</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for a in Clientes %}
+                    <tr>
+                        <th scope="row">{{ a.nome }}</th>
+                        <th scope="row">{{ a.endereco }}</th>
+                        <th scope="row">{{ a.telefone }}</th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</body>
+</html>
